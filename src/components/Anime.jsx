@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack, Box } from "@mui/material";
-import AnimeCard from "./AnimeCard";
+import { AnimeCard } from "./";
 
 const Anime = ({ dataAnime }) => {
   return (

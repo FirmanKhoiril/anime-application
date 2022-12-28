@@ -5,25 +5,12 @@ import { FaMedal } from "react-icons/fa";
 import { BsCheckAll } from "react-icons/bs";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
-const Detail = ({
-  detail: { thumb },
-  detail: { status },
-  detail: { title },
-  detail: { synopsis },
-  detail: { ranking },
-  detail: { image },
-  detail: { genres },
-  detail: { link },
-  detail: { episodes },
-  detail: { alternativeTitles },
-  detail: { _id },
-  detail: { type },
-}) => {
+const Detail = ({ anime: { _id }, anime: { title }, anime: { genres }, anime: { image }, anime: { alternativeTitles }, anime: { ranking }, anime: { episodes }, anime: { type }, anime: { link }, anime: { synopsis }, anime: { status } }) => {
   return (
     <Box minHeight={"95vh"}>
       <Box>
         <div style={{ background: "linear-gradient(90deg, rgba(58,158,180,1) 11%, rgba(29,170,253,1) 49%, rgba(69,120,252,1) 99%)" }} className="z-0 h-[200px] lg:h-[300px]" />
-        <CardMedia alt={title} image={image} sx={{ width: 220, height: 320 }} className="flex -mt-[120px] m-auto border-2 -z-10" />
+        <CardMedia alt={title} image={image} sx={{ width: 220, height: 320 }} className="flex -mt-[120px] m-auto  -z-10 shadow-lg shadow-black rounded-md dark:shadow-white" />
         <CardContent className="text-center font-extrabold dark:text-slate-100 ">{title}</CardContent>
         <Box display={"flex"} p={2} flexDirection="column">
           <Box sx={{ mr: { sm: "100px", md: 0 } }}>
@@ -59,7 +46,6 @@ const Detail = ({
               </Typography>
             </Box>
             <Box className="flex flex-row items-center ml-4 mt-4">
-              <CardMedia image={thumb} alt={title} sx={{ width: 30, height: 30, objectFit: "cover" }} />
               <Typography variant="body2" marginLeft={1} className=" text-slate-600 dark:text-white/75">
                 Status : <span className="text-sky-500"> {status}</span>
               </Typography>

@@ -1,3 +1,9 @@
 export { default as Navbar } from "./Navbar";
 export { default as SearchAnime } from "./SearchAnime";
 export { default as AnimeDetails } from "./AnimeDetails";
+export { default as Anime } from "./Anime";
+export { default as AnimeCard } from "./AnimeCard";
+export { default as Detail } from "./Detail";
+export { default as Genres } from "./Genres";
+export { default as Loading } from "./Loading";
+export { default as SearchBar } from "./SearchBar";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FetchAnime } from "../utils/FetchAnime";
 import { Box, Typography } from "@mui/material";
-import Anime from "../components/Anime";
+import { Anime } from "../components";
 import { useParams } from "react-router-dom";
 
 const SearchAnime = () => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import Logo from "../assets/anime.png";
-import SearchBar from "./SearchBar";
+import { SearchBar } from "./";
 
 const Navbar = () => {
   return (

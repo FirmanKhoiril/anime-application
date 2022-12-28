@@ -25,7 +25,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/anime/:id" element={<AnimeDetails />} />
-            <Route path="/search/:searchAnime" element={<SearchAnime />} />
+            {/* <Route path="/search/:searchAnime" element={<SearchAnime />} /> */}
           </Routes>
         </Box>
       </BrowserRouter>
