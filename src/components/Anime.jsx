@@ -5,8 +5,8 @@ import { AnimeCard } from "./";
 const Anime = ({ dataAnime }) => {
   return (
     <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
-      {dataAnime.map((item) => (
-        <Box key={item._id}>{item._id && <AnimeCard anime={item} />}</Box>
+      {dataAnime?.map((anime) => (
+        <Box>{anime._id && <AnimeCard anime={anime} />}</Box>
       ))}
     </Stack>
   );

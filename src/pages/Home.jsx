@@ -1,25 +1,36 @@
-import React, { useState } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { Anime, Loading, Genres } from "../components";
-import { useGetGenreListAnimeQuery } from "../utils/FetchAnime";
+import { Anime, Error, Genres, Pagination, Loading } from "../components";
+import React from "react";
+import { fetchAnime } from "../utils/FetchAnime";
+import { useQuery } from "react-query";
+import { useStateContext } from "../context/contextApi";
+
+const instagram = "https://www.instagram.com/firman.khoiril/";
 
 const Home = () => {
-  const [genres, setGenres] = useState("Award Winning");
-  const { data, error, isFetching } = useGetGenreListAnimeQuery(genres);
+  const { genres, page } = useStateContext();
 
-  const instagram = "https://www.instagram.com/firman.khoiril/";
+  const dataAnime = async () => {
+    const response = await fetchAnime(`anime?page=${page}&size=20&genres=${genres}`);
 
-  if (error) return `error: ${error} `;
-  const dataAnime = data?.data;
-  if (isFetching) return <Loading />;
+    return response;
+  };
+
+  const { data, isSuccess, isFetching, isError, isLoading, error } = useQuery(["anime", genres], dataAnime, {
+    refetchOnWindowFocus: false,
+    refetchInterval: 10000,
+    staleTime: 10 * (30 * 1000),
+  });
+  const datas = data?.data?.map((item) => item);
+
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
-      <Box sx={{ height: { sx: "auto", md: "90vh" }, px: { sx: 0, md: 2 } }} className="border-r-2">
-        <Genres genres={genres} setGenres={setGenres} />
+      <Box sx={{ height: { sx: "auto", md: "94vh" }, px: { sx: 0, md: 2 } }} className="border-r-2">
+        <Genres />
 
         <Typography variant="body2" sx={{ mt: 1.35 }} className="hidden lg:block dark:text-slate-300 text-gray-600">
           @Copyright 2022 By
-          <a href={instagram} target="_blank" className="text-sky-500">
+          <a href={instagram} target="_blank" className="text-sky-500 px-1">
             Firman
           </a>
         </Typography>
@@ -29,8 +40,10 @@ const Home = () => {
           {genres}
           <span className="text-sky-500"> Animes</span>
         </Typography>
-
-        <Anime dataAnime={dataAnime} />
+        {isFetching && isLoading && <Loading />}
+        {isSuccess && <Anime dataAnime={datas} />}
+        {isError && <Error error={error} />}
+        <Pagination />
       </Box>
     </Stack>
   );
