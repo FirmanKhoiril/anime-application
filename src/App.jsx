@@ -3,7 +3,7 @@ import "./App.css";
 import { Box } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, AnimeDetails, SearchAnime } from "./components/index";
-import Home from "./pages/Home";
+import { Home } from "./pages";
 import { MdDarkMode } from "react-icons/md";
 import { BsFillSunFill } from "react-icons/bs";
 import { Tooltip } from "@mui/material";

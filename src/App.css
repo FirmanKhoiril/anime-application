@@ -5,4 +5,40 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-color: #0ea5e9 #fff;
+}
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+body::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+}
+body::-webkit-scrollbar-thumb:horizontal {
+  background-color: #0ea5e9;
+}
+body::-webkit-scrollbar-thumb:vertical {
+  height: 10;
+  background-color: #0ea5e9;
+}
+
+.scroller {
+  scrollbar-color: #0ea5e9 #fff;
+}
+
+.scroller::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+
+.scroller::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+}
+
+.scroller::-webkit-scrollbar-thumb:vertical {
+  height: 10;
+  background-color: #0ea5e9;
+}
+.scroller::-webkit-scrollbar-thumb:horizontal {
+  background-color: #0ea5e9;
 }

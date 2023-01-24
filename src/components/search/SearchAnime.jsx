@@ -23,14 +23,18 @@ const SearchAnime = () => {
   const datas = data?.data?.map((item) => item);
 
   return (
-    <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+    <Box p={2} sx={{ overflowY: "auto", height: "100%", flex: 2 }}>
       <Typography variant="h6" fontWeight="bold" mb={2} className="dark:text-slate-200 text-black text-center">
         Result for :<span className="text-sky-500 capitalize"> {searchAnime}</span>
       </Typography>
       {isFetching && isLoading && <Loading />}
-      {isSuccess && <Anime dataAnime={datas} />}
+      {isSuccess && (
+        <>
+          <Anime dataAnime={datas} />
+          <Pagination />
+        </>
+      )}
       {isError && <Error />}
-      <Pagination />
     </Box>
   );
 };

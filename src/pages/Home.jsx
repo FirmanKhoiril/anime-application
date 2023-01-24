@@ -19,13 +19,13 @@ const Home = () => {
   const { data, isSuccess, isFetching, isError, isLoading } = useQuery(["anime", genres, page], dataAnime, {
     refetchOnWindowFocus: false,
     refetchInterval: 10000,
-    staleTime: 10 * (30 * 1000),
+    staleTime: 10 * (60 * 1000),
   });
   const datas = data?.data?.map((item) => item);
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
-      <Box sx={{ height: { sx: "auto", md: "94vh" }, px: { sx: 0, md: 2 } }} className="border-r-2">
+      <Box sx={{ height: { sx: "auto", md: "94vh" }, px: { sx: 0, md: 2 } }} className="border-r dark:border-white/10 border-black/10">
         <Genres />
 
         <Typography variant="body2" sx={{ mt: 1.35 }} className="hidden lg:block dark:text-slate-300 text-gray-600">
@@ -41,9 +41,13 @@ const Home = () => {
           <span className="text-sky-500"> Animes</span>
         </Typography>
         {isFetching && isLoading && <Loading />}
-        {isSuccess && <Anime dataAnime={datas} />}
+        {isSuccess && (
+          <>
+            <Anime dataAnime={datas} />
+            <Pagination />
+          </>
+        )}
         {isError && <Error />}
-        <Pagination />
       </Box>
     </Stack>
   );

@@ -6,7 +6,7 @@ import { useStateContext } from "../context/contextApi";
 const Genres = () => {
   const { genres, setGenres } = useStateContext();
   return (
-    <Stack direction={"row"} sx={{ overflowY: "auto", height: { sx: "auto", md: "95%" }, flexDirection: { md: "column" } }}>
+    <Stack direction={"row"} sx={{ overflowY: "auto", height: { sx: "auto", md: "95%" }, flexDirection: { md: "column" } }} className="scroller">
       {DummyData.map((anime) => (
         <button
           onClick={() => setGenres(anime.name)}
