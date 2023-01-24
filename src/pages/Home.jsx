@@ -29,9 +29,9 @@ const Home = () => {
         <Genres />
 
         <Typography variant="body2" sx={{ mt: 1.35 }} className="hidden lg:block dark:text-slate-300 text-gray-600">
-          @Copyright 2022 By
+          Created in 2022 By
           <a href={instagram} target="_blank" className="text-sky-500 px-1">
-            Firman
+            @Firman
           </a>
         </Typography>
       </Box>
