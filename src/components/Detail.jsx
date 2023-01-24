@@ -5,7 +5,7 @@ import { FaMedal } from "react-icons/fa";
 import { BsCheckAll } from "react-icons/bs";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
-const Detail = ({ anime: { _id }, anime: { title }, anime: { genres }, anime: { image }, anime: { alternativeTitles }, anime: { ranking }, anime: { episodes }, anime: { type }, anime: { link }, anime: { synopsis }, anime: { status } }) => {
+const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, synopsis, alternativeTitles, type, episodes } }) => {
   return (
     <Box minHeight={"95vh"}>
       <Box>

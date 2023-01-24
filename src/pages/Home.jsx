@@ -16,7 +16,7 @@ const Home = () => {
     return response;
   };
 
-  const { data, isSuccess, isFetching, isError, isLoading, error } = useQuery(["anime", genres], dataAnime, {
+  const { data, isSuccess, isFetching, isError, isLoading } = useQuery(["anime", genres, page], dataAnime, {
     refetchOnWindowFocus: false,
     refetchInterval: 10000,
     staleTime: 10 * (30 * 1000),
@@ -42,7 +42,7 @@ const Home = () => {
         </Typography>
         {isFetching && isLoading && <Loading />}
         {isSuccess && <Anime dataAnime={datas} />}
-        {isError && <Error error={error} />}
+        {isError && <Error />}
         <Pagination />
       </Box>
     </Stack>

@@ -9,11 +9,11 @@ import { ContextProvider } from "./context/contextApi";
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ContextProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <ContextProvider>
         <App />
         <ReactQueryDevtools initialIsOpen />
-      </QueryClientProvider>
-    </ContextProvider>
+      </ContextProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
