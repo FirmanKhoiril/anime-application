@@ -7,6 +7,9 @@ module.exports = {
       backgroundColor: {
         dark: "#20232A",
       },
+      screens: {
+        xs: "400px",
+      },
     },
   },
   plugins: [],
