@@ -5,11 +5,11 @@ import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
 const AnimeCard = ({ anime }) => {
   return (
-    <Card sx={{ width: { md: "290px", xs: "290px", sm: "100%" } }} className="rounded-3xl md:ml-16 sm:ml-20 xs:ml-10 ml-5   shadow-lg dark:shadow-white/80 shadow-black/70 hover:scale-[1.01] hover:ease-in transition duration-700">
+    <Card sx={{ width: { md: "290px", xs: "290px", sm: "100%" } }} className="rounded-md md:ml-16 sm:ml-20 xs:ml-10 ml-5   shadow-lg dark:shadow-white/80 shadow-black/70 hover:scale-[1.01] hover:ease-in transition duration-700">
       <Link to={`/anime/${anime._id}`}>
         <CardMedia component={"img"} title={anime.title} sx={{ width: { xs: "290px", md: "290px", sm: "100%" }, height: 320 }} image={anime.image} draggable />
       </Link>
-      <CardContent className=" bg-white/10 dark:bg-dark h-[100px]">
+      <CardContent className=" bg-white/10 dark:bg-dark h-[100px] rounded-md">
         <Link to={`/anime/${anime._id}`}>
           <Typography fontWeight={"bold"} variant="subtitle1" className="truncate text-slate-600 dark:text-slate-300">
             {anime.title}
