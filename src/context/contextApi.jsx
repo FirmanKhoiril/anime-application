@@ -9,7 +9,7 @@ export const ContextProvider = ({ children }) => {
   const [genres, setGenres] = useState("Award Winning");
   const [page, setPage] = useState(1);
   const nextPage = () => {
-    setPage((prev) => prev + 1);
+    setPage((prev) => Math.max(prev - 1, 0));
   };
   const prevPage = () => {
     setPage((prev) => prev - 1);
