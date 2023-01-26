@@ -7,6 +7,9 @@ module.exports = {
       backgroundColor: {
         dark: "#20232A",
       },
+      backgroundImage: {
+        "hero-pattern": "url('./src/assets/main.png')",
+      },
       screens: {
         xs: "400px",
       },
