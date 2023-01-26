@@ -25,7 +25,7 @@ const Homepage = () => {
           <p className="text-gray-300"> thank you for visiting my website</p>
           <p className="text-sm tracking-wide md:text-left text-center">
             <span>Created By </span>
-            <a href={instagram} target="_blank" className="text-transparent text-lg font-bold bg-clip-text bg-gradient-to-r from-fuchsia-500 to-red-500 via-pink-500">
+            <a href={instagram} target="_blank" className="text-transparent text-lg font-bold bg-clip-text bg-gradient-to-r from-fuchsia-500 to-red-500 pb-1 outline-1 via-pink-500">
               Firman Khoiril Rohmatullah
             </a>
           </p>
