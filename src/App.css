@@ -11,6 +11,9 @@ body::-webkit-scrollbar {
   width: 4px;
   height: 2px;
 }
+.hero {
+  background-image: src("./assets/background.jpg");
+}
 body::-webkit-scrollbar-track-piece {
   background-color: #fff;
 }

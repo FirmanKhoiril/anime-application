@@ -2,7 +2,6 @@ import React from "react";
 import Anime from "../assets/anime.png";
 import { useStateContext } from "../context/contextApi";
 import { useNavigate } from "react-router-dom";
-
 const instagram = "https://www.instagram.com/firman.khoiril/";
 
 const Homepage = () => {
@@ -17,7 +16,7 @@ const Homepage = () => {
 
   return (
     <div className="h-full -mt-[64px] md:-mt-[72px]">
-      <div className="bg-hero-pattern h-full bg-no-repeat bg-cover bg-center">
+      <div className="hero h-full bg-no-repeat bg-cover bg-center">
         <div className="flex items-center justify-evenly md:justify-around md:flex-row flex-col bg-black/40 h-screen text-white">
           <div className="">
             <h1 className={`${standar}`}>Welcome To Our Anime Application</h1>
