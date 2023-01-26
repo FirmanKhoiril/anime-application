@@ -30,7 +30,7 @@ const Homepage = () => {
             </a>
           </p>
         </div>
-        <div className="flex flex-col md:mt-0 sm:mt-40 mt-[250px] xs:mt-[240px] md:right-56 absolute ">
+        <div className="flex flex-col md:mt-0 sm:mt-40 mt-[200px] xs:mt-[220px] md:right-56 absolute ">
           <img src={Anime} alt="Anime" className="h-[300px] md:h-96 w-62 mb-" />
           <button className={`text-xl bg-black/60 px-4 py-3 hover:bg-black/80 rounded-sm`} onClick={toHomepage}>
             Explore Now !
