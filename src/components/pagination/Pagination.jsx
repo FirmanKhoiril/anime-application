@@ -9,7 +9,7 @@ const Pagination = () => {
       <button type="button" className="px-6 rounded-sm hover:bg-sky-500/90 py-1 bg-sky-500 disabled:bg-sky-500/10" onClick={prevPage} disabled={page == 1 ? true : false}>
         Prev
       </button>
-      <span>{page == 1}</span>
+      <span>{page}</span>
       <button type="button" className="px-6 rounded-sm hover:bg-sky-500/90 py-1 bg-sky-500" onClick={nextPage}>
         Next
       </button>
