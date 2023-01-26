@@ -9,7 +9,7 @@ const AnimeHome = () => {
   const { genres, page } = useStateContext();
 
   const dataAnime = async () => {
-    const response = await fetchAnime(`anime?page=${page}&size=20&genres=${genres}`);
+    const response = await fetchAnime(`anime?page=${page}&size=21&genres=${genres}`);
 
     return response;
   };
