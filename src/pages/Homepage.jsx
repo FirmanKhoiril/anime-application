@@ -19,7 +19,7 @@ const Homepage = () => {
     <div className="h-full relative overflow-hidden -mt-[64px] sm:-mt-[72px] lg:-mt-[72px]">
       <div className="flex items-center justify-evenly md:justify-around md:flex-row flex-col bg-black/40 h-screen text-white">
         <img src={Background} alt="Background" className="h-screen bg-no-repeat bg-cover bg-center relative w-full" />
-        <div className="absolute top-[70px] mt-10 md:mt-1 sm:top-16 lg:top-[450px] md:left-40">
+        <div className="absolute top-[70px] mt-10 md:mt-3 sm:top-16 lg:top-[450px] md:left-40">
           <h1 className={`${standar} mx-1 font-semibold`}>Welcome To Our Anime Application</h1>
           <p className="text-sm text-gray-300 tracking-wide md:text-left text-center">
             <p className="hidden md:block  text-3xl text-white/80">Still BETA Version</p>
