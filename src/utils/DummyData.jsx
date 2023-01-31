@@ -8,10 +8,12 @@ import { MdMovieCreation } from "react-icons/md";
 import { GiGhost, GiMountainClimbing, GiChemicalTank, GiLoveLetter, GiEvilBook } from "react-icons/gi";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ScoreboardIcon from "@mui/icons-material/Scoreboard";
-import { AiFillHtml5 } from "react-icons/ai";
-import { FaReact } from "react-icons/fa";
+import { GiWhiteBook } from "react-icons/gi";
+import { BiHomeHeart } from "react-icons/bi";
 
-const Adult = () => <p>18++</p>;
+const Adult = () => <p className="text-lg">18++</p>;
+
+export const links = [{ name: "anime", icon: <BiHomeHeart /> }];
 
 export const DummyData = [
   { name: "Award Winning", icon: <EmojiEventsIcon /> },
@@ -37,13 +39,27 @@ export const DummyData = [
   { name: "Hentai", icon: <Adult /> },
 ];
 
-export const Skill = [
-  { name: "HTML", icon: <AiFillHtml5 /> },
-  { name: "CSS", icon: <FaReact /> },
-  { name: "Javascript", icon: <FaReact /> },
-  { name: "Boostrap", icon: <FaReact /> },
-  { name: "Tailwind", icon: <FaReact /> },
-  { name: "React Js", icon: <FaReact /> },
-  { name: "Next Js", icon: <FaReact /> },
-  { name: "Node Js", icon: <FaReact /> },
+export const GenreMovies = [
+  { name: "Action", icon: <RiSwordLine /> },
+  { name: "Adventure", icon: <HelpOutlineIcon /> },
+  { name: "Animation", icon: <GiGhost /> },
+  { name: "Biography", icon: <FavoriteBorderIcon /> },
+  { name: "Comedy", icon: <MdMovieCreation /> },
+  { name: "Crime", icon: <ScoreboardIcon /> },
+  { name: "Documentary", icon: <GiEvilBook /> },
+  { name: "Drama", icon: <ForestIcon /> },
+  { name: "Family", icon: <RestaurantMenuIcon /> },
+  { name: "Fantasy", icon: <FavoriteBorderIcon /> },
+  { name: "Film-Noir", icon: <LiveTvIcon /> },
+  { name: "History", icon: <RiEmotionLaughLine /> },
+  { name: "Horror", icon: <RiGhost2Line /> },
+  { name: "Music", icon: <FavoriteBorderIcon /> },
+  { name: "Musical", icon: <LiveTvIcon /> },
+  { name: "Mystery", icon: <GiMountainClimbing /> },
+  { name: "Romance", icon: <GiLoveLetter /> },
+  { name: "Sci-Fi", icon: <GiChemicalTank /> },
+  { name: "Sport", icon: <Adult /> },
+  { name: "Thriller", icon: <Adult /> },
+  { name: "War", icon: <Adult /> },
+  { name: "Western", icon: <Adult /> },
 ];

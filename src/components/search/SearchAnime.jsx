@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { Anime, Loading, Pagination, Error } from "..";
+import { Anime, Loading, Pagination, Error, SearchBar } from "..";
 import { useParams } from "react-router-dom";
 import { fetchAnime } from "../../utils/FetchAnime";
 import { useQuery } from "react-query";
@@ -27,9 +27,14 @@ const SearchAnime = () => {
       <Typography variant="h6" fontWeight="bold" mb={2} className="dark:text-slate-200 text-black text-center">
         Result for :<span className="text-sky-500 capitalize"> {searchAnime}</span>
       </Typography>
+
       {isFetching && isLoading && <Loading />}
       {isSuccess && (
         <>
+          <div className="flex justify-center mb-10">
+            <SearchBar />
+          </div>
+
           <Anime dataAnime={datas} />
           <Pagination />
         </>

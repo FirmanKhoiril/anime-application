@@ -26,7 +26,7 @@ const App = () => {
               </div>
               <Navbar />
               {toogle && (
-                <div className="relative text-black dark:text-white">
+                <div className="relative z-50 text-black dark:text-white">
                   <Sidebar />
                   <div className="w-full absolute h-screen bg-black/60 dark:bg-black/50" />
                 </div>
