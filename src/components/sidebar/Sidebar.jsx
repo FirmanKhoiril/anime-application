@@ -7,7 +7,7 @@ import { links } from "../../utils/DummyData";
 const Sidebar = () => {
   const { setToogle } = useStateContext();
   return (
-    <motion.div whileInView={{ x: [-300, 0] }} transition={{ duration: 0.7, ease: "easeOut" }} className="fixed h-screen z-10 bg-white/90 dark:border-white/5 dark:bg-dark/90 border-r w-full md:w-96">
+    <motion.div whileInView={{ x: [-300, 0] }} transition={{ duration: 0.7, ease: "easeOut" }} className="fixed h-screen z-20 bg-white/90 dark:border-white/5 dark:bg-dark/90 border-r w-full md:w-96">
       <div className="flex flex-col mt-4 ml-10 justify-around items-start flex-wrap">
         <motion.div whileInView={{ opacity: [0, 1], x: [-100, 0] }} transition={{ delay: 0.4, duration: 1 }} className="flex flex-col justify-around mt-8 space-y-4 items-center">
           {links.map((link) => (

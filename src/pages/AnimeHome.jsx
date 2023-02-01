@@ -26,7 +26,7 @@ const AnimeHome = () => {
       <Box sx={{ height: { sx: "auto", md: "94vh" }, px: { sx: 0, md: 2 } }} className="border-r dark:border-white/10 border-black/10">
         <Genres />
       </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }} zIndex="10">
         <Typography className="dark:text-white" variant="h6" fontWeight="bold" mb={2}>
           {genres}
           <span className="text-sky-500"> Animes</span>

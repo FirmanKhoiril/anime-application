@@ -22,7 +22,6 @@ const Homepage = () => {
         <div className="absolute top-[70px] mt-6 md:mt-3 sm:top-16 lg:top-[400px] md:left-40">
           <h1 className={`${standar} mx-1 font-semibold`}>Welcome To Our Anime Application</h1>
           <div className="text-sm text-gray-300 tracking-wide md:text-left text-center">
-            <p className="hidden md:block  text-3xl text-white/80">Still BETA Version</p>
             <span>Created By </span>
             <a
               href={instagram}
