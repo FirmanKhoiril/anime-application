@@ -27,7 +27,7 @@ const SearchBar = () => {
     <Tooltip title="Search Anime or Genres" position="bottom">
       <form onSubmit={handleSubmit} className="mr-0 justify-center -z-10 lg:mr-24 inline-flex drop-shadow-md bg-white/60 dark:bg-white/10 hover:bg-white/90 rounded-full md:hover:drop-shadow-lg">
         <input
-          className="outline-none  dark:bg-white/10 placeholder:text-sm bg-white/60 md:p-2 pl-[7px] hover:bg-white/90 focus:border-[0.1px] focus:border-black/60 dark:focus:border-white dark:text-white tracking-wider rounded-l-full border-r border-black/10 dark:border-white/20 placeholder:text-black font-semibold dark:font-medium dark:placeholder:text-slate-50"
+          className="outline-none  dark:bg-white/10 placeholder:text-sm bg-white/60 md:p-2 pl-[7px] hover:bg-white/90 focus:border-[0.1px] focus:border-black/60 dark:focus:border-white dark:text-white tracking-wider rounded-l-full border-r border-black/10 dark:border-white/20 placeholder:text-black dark:font-medium dark:placeholder:text-slate-50"
           value={searchAnime}
           placeholder="Search Anime..."
           onChange={(e) => setSearchAnime(e.target.value)}

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { Anime, Error, SearchBar, Genres, Pagination, Loading } from "../components";
+import { Anime, Error, Genres, Pagination, Loading } from "../components";
 import React from "react";
 import { fetchAnime } from "../utils/FetchAnime";
 import { useQuery } from "react-query";
@@ -34,9 +34,6 @@ const AnimeHome = () => {
         {isFetching && isLoading && <Loading />}
         {isSuccess && (
           <>
-            <div className="flex justify-center mb-10">
-              <SearchBar />
-            </div>
             <Anime dataAnime={datas} />
             <Pagination />
           </>
