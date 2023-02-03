@@ -1,12 +1,12 @@
-import { Box, Stack, Typography } from "@mui/material";
-import { Anime, Error, Genres, Pagination, Loading } from "../components";
+import { Box, Stack, Typography, Pagination } from "@mui/material";
+import { Anime, Error, Genres, Loading } from "../components";
 import React from "react";
 import { fetchAnime } from "../utils/FetchAnime";
 import { useQuery } from "react-query";
 import { useStateContext } from "../context/contextApi";
 
 const AnimeHome = () => {
-  const { genres, page } = useStateContext();
+  const { genres, page, setPage } = useStateContext();
 
   const dataAnime = async () => {
     const response = await fetchAnime(`anime?page=${page}&size=21&genres=${genres}`);
@@ -35,7 +35,7 @@ const AnimeHome = () => {
         {isSuccess && (
           <>
             <Anime dataAnime={datas} />
-            <Pagination />
+            <Pagination sx={{ my: 4 }} count={15} shape={"rounded"} onChange={(e, value) => setPage(value)} color={"primary"} />
           </>
         )}
         {isError && <Error />}

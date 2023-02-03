@@ -7,6 +7,5 @@ export { default as Detail } from "./Detail";
 export { default as Genres } from "./Genres";
 export { default as Loading } from "./condition/Loading";
 export { default as SearchBar } from "./search/SearchBar";
-export { default as Pagination } from "./pagination/Pagination";
 export { default as Error } from "./condition/Error";
 export { default as Sidebar } from "./sidebar/Sidebar";

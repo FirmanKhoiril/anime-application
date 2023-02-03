@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import { Anime, Loading, Pagination, Error, SearchBar } from "..";
+import { Box, Typography, Pagination } from "@mui/material";
+import { Anime, Loading, Error, SearchBar } from "..";
 import { useParams } from "react-router-dom";
 import { fetchAnime } from "../../utils/FetchAnime";
 import { useQuery } from "react-query";
@@ -8,7 +8,7 @@ import { useStateContext } from "../../context/contextApi";
 
 const SearchAnime = () => {
   const { searchAnime } = useParams();
-  const { page } = useStateContext();
+  const { page, dark, setPage } = useStateContext();
 
   const dataSearchAnime = async () => {
     const response = await fetchAnime(`anime?page=${page}&size=20&search=${searchAnime}`);
@@ -36,7 +36,7 @@ const SearchAnime = () => {
           </div>
 
           <Anime dataAnime={datas} />
-          <Pagination />
+          <Pagination count={5} sx={{ my: 4 }} defaultPage={1} onChange={(e, value) => setPage(value)} color="primary" />
         </>
       )}
       {isError && <Error />}
