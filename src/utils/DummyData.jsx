@@ -38,28 +38,3 @@ export const DummyData = [
   { name: "Erotica", icon: <Adult /> },
   { name: "Hentai", icon: <Adult /> },
 ];
-
-export const GenreMovies = [
-  { name: "Action", icon: <RiSwordLine /> },
-  { name: "Adventure", icon: <HelpOutlineIcon /> },
-  { name: "Animation", icon: <GiGhost /> },
-  { name: "Biography", icon: <FavoriteBorderIcon /> },
-  { name: "Comedy", icon: <MdMovieCreation /> },
-  { name: "Crime", icon: <ScoreboardIcon /> },
-  { name: "Documentary", icon: <GiEvilBook /> },
-  { name: "Drama", icon: <ForestIcon /> },
-  { name: "Family", icon: <RestaurantMenuIcon /> },
-  { name: "Fantasy", icon: <FavoriteBorderIcon /> },
-  { name: "Film-Noir", icon: <LiveTvIcon /> },
-  { name: "History", icon: <RiEmotionLaughLine /> },
-  { name: "Horror", icon: <RiGhost2Line /> },
-  { name: "Music", icon: <FavoriteBorderIcon /> },
-  { name: "Musical", icon: <LiveTvIcon /> },
-  { name: "Mystery", icon: <GiMountainClimbing /> },
-  { name: "Romance", icon: <GiLoveLetter /> },
-  { name: "Sci-Fi", icon: <GiChemicalTank /> },
-  { name: "Sport", icon: <Adult /> },
-  { name: "Thriller", icon: <Adult /> },
-  { name: "War", icon: <Adult /> },
-  { name: "Western", icon: <Adult /> },
-];

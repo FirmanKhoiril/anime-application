@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Pagination } from "@mui/material";
+import { Box, Pagination, Stack, Typography } from "@mui/material";
 import { Anime, Error, Genres, Loading } from "../components";
 import React from "react";
 import { fetchAnime } from "../utils/FetchAnime";
@@ -20,6 +20,7 @@ const AnimeHome = () => {
     staleTime: 10 * (60 * 1000),
   });
   const datas = data?.data?.map((item) => item);
+  const totalPage = data?.meta?.totalPage;
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
@@ -35,7 +36,7 @@ const AnimeHome = () => {
         {isSuccess && (
           <>
             <Anime dataAnime={datas} />
-            <Pagination sx={{ my: 4 }} count={15} shape={"rounded"} onChange={(e, value) => setPage(value)} color={"primary"} />
+            <Pagination shape={"rounded"} showFirstButton={"true"} showLastButton={"true"} count={totalPage} sx={{ mx: 4 }} onChange={(e, value) => setPage(value)} color="primary" />
           </>
         )}
         {isError && <Error />}

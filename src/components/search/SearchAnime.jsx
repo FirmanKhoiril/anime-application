@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Pagination } from "@mui/material";
+import { Box, Pagination, Typography } from "@mui/material";
 import { Anime, Loading, Error, SearchBar } from "..";
 import { useParams } from "react-router-dom";
 import { fetchAnime } from "../../utils/FetchAnime";
@@ -8,7 +8,7 @@ import { useStateContext } from "../../context/contextApi";
 
 const SearchAnime = () => {
   const { searchAnime } = useParams();
-  const { page, dark, setPage } = useStateContext();
+  const { page, setPage } = useStateContext();
 
   const dataSearchAnime = async () => {
     const response = await fetchAnime(`anime?page=${page}&size=20&search=${searchAnime}`);
@@ -21,6 +21,7 @@ const SearchAnime = () => {
     staleTime: 10 + 60 * 1000,
   });
   const datas = data?.data?.map((item) => item);
+  const totalPage = data?.meta?.totalPage;
 
   return (
     <Box p={2} sx={{ overflowY: "auto", height: "100%", flex: 2 }}>
@@ -36,7 +37,7 @@ const SearchAnime = () => {
           </div>
 
           <Anime dataAnime={datas} />
-          <Pagination count={5} sx={{ my: 4 }} defaultPage={1} onChange={(e, value) => setPage(value)} color="primary" />
+          <Pagination shape={"rounded"} showFirstButton={"true"} showLastButton={"true"} count={totalPage} sx={{ mx: 4 }} onChange={(e, value) => setPage(value)} color="primary" />
         </>
       )}
       {isError && <Error />}

@@ -9,14 +9,8 @@ export const ContextProvider = ({ children }) => {
   const [login, setLogin] = useState(false);
   const [genres, setGenres] = useState("Award Winning");
   const [page, setPage] = useState(1);
-  const nextPage = () => {
-    setPage((prev) => prev + 1);
-  };
-  const prevPage = () => {
-    setPage((prev) => prev - 1);
-  };
 
-  return <StateContext.Provider value={{ dark, genres, setGenres, page, setPage, setDark, searchAnime, setSearchAnime, nextPage, toogle, setToogle, login, setLogin, prevPage }}>{children}</StateContext.Provider>;
+  return <StateContext.Provider value={{ dark, genres, setGenres, page, setPage, setDark, searchAnime, setSearchAnime, toogle, setToogle, login, setLogin }}>{children}</StateContext.Provider>;
 };
 
 export const useStateContext = () => useContext(StateContext);

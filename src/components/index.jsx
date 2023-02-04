@@ -9,3 +9,4 @@ export { default as Loading } from "./condition/Loading";
 export { default as SearchBar } from "./search/SearchBar";
 export { default as Error } from "./condition/Error";
 export { default as Sidebar } from "./sidebar/Sidebar";
+export { default as RelatedAnime } from "./RelatedAnime";
