@@ -1,6 +1,6 @@
 import React from "react";
 import Anime from "../assets/anime.png";
-import Background from "../assets/4258797.jpg";
+import Background from "../assets/test.jpg";
 import { useStateContext } from "../context/contextApi";
 import { useNavigate } from "react-router-dom";
 const instagram = "https://www.instagram.com/firman.khoiril/";

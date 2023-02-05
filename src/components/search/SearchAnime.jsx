@@ -8,7 +8,7 @@ import { useStateContext } from "../../context/contextApi";
 
 const SearchAnime = () => {
   const { searchAnime } = useParams();
-  const { page, setPage } = useStateContext();
+  const { setPage, page } = useStateContext();
 
   const dataSearchAnime = async () => {
     const response = await fetchAnime(`anime?page=${page}&size=20&search=${searchAnime}`);
@@ -16,7 +16,7 @@ const SearchAnime = () => {
     return response;
   };
 
-  const { data, isSuccess, isFetching, isError, isLoading } = useQuery(["searchAnime", searchAnime, page], dataSearchAnime, {
+  const { data, isSuccess, isFetching, error, isError, isLoading } = useQuery(["searchAnime", searchAnime, page], dataSearchAnime, {
     refetchOnWindowFocus: false,
     staleTime: 10 + 60 * 1000,
   });
@@ -37,10 +37,26 @@ const SearchAnime = () => {
           </div>
 
           <Anime dataAnime={datas} />
-          <Pagination shape={"rounded"} showFirstButton={"true"} showLastButton={"true"} count={totalPage} sx={{ mx: 4 }} onChange={(e, value) => setPage(value)} color="primary" />
+          <Pagination
+            shape={"rounded"}
+            showFirstButton={"true"}
+            showLastButton={"true"}
+            count={totalPage}
+            defaultPage={page}
+            sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
+            onChange={(e, value) => setPage(value)}
+            color="primary"
+          />
+          <Typography variant="body1" className="dark:text-white">
+            Make Sure To Click 1 first
+          </Typography>
         </>
       )}
-      {isError && <Error />}
+      {isError && (
+        <>
+          <Error errorMessage={error?.message} />
+        </>
+      )}
     </Box>
   );
 };

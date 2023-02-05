@@ -14,7 +14,7 @@ const AnimeHome = () => {
     return response;
   };
 
-  const { data, isSuccess, isFetching, isError, isLoading } = useQuery(["anime", genres, page], dataAnime, {
+  const { data, isSuccess, error, isFetching, isError, isLoading } = useQuery(["anime", genres, page], dataAnime, {
     refetchOnWindowFocus: false,
     refetchInterval: 10000,
     staleTime: 10 * (60 * 1000),
@@ -36,10 +36,19 @@ const AnimeHome = () => {
         {isSuccess && (
           <>
             <Anime dataAnime={datas} />
-            <Pagination shape={"rounded"} showFirstButton={"true"} showLastButton={"true"} count={totalPage} sx={{ mx: 4 }} onChange={(e, value) => setPage(value)} color="primary" />
+            <Pagination
+              shape={"rounded"}
+              showFirstButton={"true"}
+              showLastButton={"true"}
+              count={totalPage}
+              defaultPage={page}
+              sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
+              onChange={(e, value) => setPage(value)}
+              color="primary"
+            />
           </>
         )}
-        {isError && <Error />}
+        {isError && <Error errorMessage={error?.message} />}
       </Box>
     </Stack>
   );
