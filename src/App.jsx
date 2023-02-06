@@ -20,7 +20,7 @@ const App = () => {
               <div className="fixed right-4 bottom-4 " style={{ zIndex: "1000" }}>
                 <Tooltip title="Theme Mode" position="Top">
                   <button onClick={() => setDark(!dark)} className="text-2xl bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-500  p-3 hover:drop-shadow-xl hover:bg-slate-700/60 text-white rounded-full">
-                    {!dark ? <MdDarkMode className="text-orange-500" /> : <BsFillSunFill className="text-yellow-400" />}
+                    {dark ? <MdDarkMode className="text-yellow-500" /> : <BsFillSunFill className="text-orange-500/90" />}
                   </button>
                 </Tooltip>
               </div>
