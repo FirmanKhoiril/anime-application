@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
-import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
 const AnimeCard = ({ anime }) => {
   return (
-    <Card sx={{ width: { md: "300px", xs: "290px", sm: "100%" }, height: 300 }} className=" md:ml-16 sm:ml-20 xs:ml-10 ml-5 -z-50  shadow-lg shadow-black/70 hover:scale-[1.01] hover:ease-in transition duration-700 bg-white/10 dark:bg-dark">
+    <Card sx={{ width: { md: "300px", xs: "300px" } }} className=" md:ml-16 sm:ml-20 xs:ml-10 ml-5 -z-50  shadow-lg shadow-black/70 hover:scale-[1.01] hover:ease-in transition duration-700 bg-white/10 dark:bg-dark">
       <Link to={`/anime/${anime._id}`}>
-        <CardMedia component={"img"} title={anime.title} sx={{ width: { xs: "290px", md: "300px", sm: "100%", objectFit: "contain" }, height: 300 }} image={anime.image} draggable />
+        <CardMedia component={"img"} title={anime.title} sx={{ width: { xs: "290px", md: "300px", sm: "100%" }, height: 340 }} image={anime.image} draggable />
       </Link>
       <CardContent className=" bg-white/10 dark:bg-dark h-[100px]">
         <Link to={`/anime/${anime._id}`}>
@@ -15,13 +14,10 @@ const AnimeCard = ({ anime }) => {
             {anime.title}
           </Typography>
         </Link>
-        <Link to={`/anime/${anime._id}`}>
+        <Link to={`/anime/${anime._id}`} className="flex space-x-1">
           {anime.genres?.map((item, idx) => (
-            <Typography fontWeight={500} variant="subtitle2" className="text-black/90 dark:text-white/80" key={idx}>
-              {item}
-              <LocalFireDepartmentIcon className="text-orange-400" sx={{ ml: "2px", fontSize: 15 }} />
-              <LocalFireDepartmentIcon className="text-orange-500" sx={{ ml: "1px", fontSize: 15 }} />
-              <LocalFireDepartmentIcon className="text-orange-600" sx={{ ml: "1px", fontSize: 15 }} />
+            <Typography fontWeight={500} variant="subtitle2" className="flex  text-black/90 dark:text-white/80" key={idx}>
+              {item + ","}
             </Typography>
           ))}
         </Link>

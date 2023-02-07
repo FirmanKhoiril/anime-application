@@ -4,7 +4,6 @@ import { MdLiveTv } from "react-icons/md";
 import { FaMedal } from "react-icons/fa";
 import { RelatedAnime } from "../components";
 import { BsCheckAll } from "react-icons/bs";
-import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 import { useNavigate } from "react-router-dom";
 
 const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, synopsis, alternativeTitles, type, episodes } }) => {

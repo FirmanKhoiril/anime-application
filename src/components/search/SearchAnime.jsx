@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Pagination, Typography } from "@mui/material";
+import { Box, Pagination, Container, Typography } from "@mui/material";
 import { Anime, Loading, Error, SearchBar } from "..";
 import { useParams } from "react-router-dom";
 import { fetchAnime } from "../../utils/FetchAnime";
@@ -18,7 +18,8 @@ const SearchAnime = () => {
 
   const { data, isSuccess, isFetching, error, isError, isLoading } = useQuery(["searchAnime", searchAnime, page], dataSearchAnime, {
     refetchOnWindowFocus: false,
-    staleTime: 10 + 60 * 1000,
+    refetchInterval: 10000,
+    staleTime: 10 * (60 * 1000),
   });
   const datas = data?.data?.map((item) => item);
   const totalPage = data?.meta?.totalPage;
@@ -37,19 +38,12 @@ const SearchAnime = () => {
           </div>
 
           <Anime dataAnime={datas} />
-          <Pagination
-            shape={"rounded"}
-            showFirstButton={"true"}
-            showLastButton={"true"}
-            count={totalPage}
-            defaultPage={page}
-            sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
-            onChange={(e, value) => setPage(value)}
-            color="primary"
-          />
-          <Typography variant="body1" className="dark:text-white">
-            Make Sure To Click 1 first
-          </Typography>
+          <Container sx={{ display: "flex", alignItems: "center", flexDirection: { xs: "row" }, flexWrap: "wrap" }}>
+            <Pagination shape={"rounded"} count={totalPage} defaultPage={page} sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }} onChange={(e, value) => setPage(value)} color="primary" />
+            <span className="dark:text-white my-5">
+              {page} of {totalPage} pages
+            </span>
+          </Container>
         </>
       )}
       {isError && (

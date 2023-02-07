@@ -11,9 +11,9 @@ const Sidebar = () => {
     <motion.div whileInView={{ x: [-300, 0] }} transition={{ duration: 0.7, ease: "easeOut" }} className="fixed h-screen z-20 bg-white/90 dark:border-white/5 dark:bg-dark/90 border-r w-full md:w-96">
       <div className="flex flex-col mt-4 ml-10 justify-around items-start flex-wrap">
         <Link to="/" onClick={() => setLogin(false)}>
-          <div className="flex items-center hover:animate-bounce lg:text-xl tracking-tight font-[900] bg-clip-text text-transparent text-base bg-gradient-to-r from-sky-400 to-blue-500 capitalize md:uppercase">
+          <div className="flex items-center hover:animate-bounce lg:text-xl tracking-tight font-[900] bg-clip-text text-transparent text-base bg-gradient-to-r from-sky-400 via-green-500 font-mono to-blue-500 capitalize md:uppercase">
             <img src={Logo} alt="logo Anime" className="w-10 h-8 sm:h-10 sm:w-12 mr-1" />
-            <span className="block"> Anime</span>
+            <span className="block tracking-wide"> Lovers</span>
           </div>
         </Link>
         <motion.div whileInView={{ opacity: [0, 1], x: [-100, 0] }} transition={{ delay: 0.4, duration: 1 }} className="flex flex-col justify-around mt-8 space-y-4 items-center">

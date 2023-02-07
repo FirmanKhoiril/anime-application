@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { fetchAnime } from "../utils/FetchAnime";
-import { Pagination, Box } from "@mui/material";
+import { Pagination, Box, Container } from "@mui/material";
 import { Anime, Loading, Error } from "../components";
 import { useStateContext } from "../context/contextApi";
 
@@ -25,16 +25,12 @@ const RelatedAnime = ({ related }) => {
         {isSuccess && (
           <>
             <Anime dataAnime={datas} />
-            <Pagination
-              shape={"rounded"}
-              showFirstButton={"true"}
-              showLastButton={"true"}
-              count={totalPage}
-              defaultPage={page}
-              sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
-              onChange={(e, value) => setPage(value)}
-              color="primary"
-            />
+            <Container>
+              <Pagination shape={"rounded"} count={totalPage} defaultPage={page} sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }} onChange={(e, value) => setPage(value)} color="primary" />
+              <span className="dark:text-white my-5">
+                {page} of {totalPage} pages
+              </span>
+            </Container>
           </>
         )}
         <div className="mx-3">

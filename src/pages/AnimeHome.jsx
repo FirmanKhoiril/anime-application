@@ -1,4 +1,4 @@
-import { Box, Pagination, Stack, Typography } from "@mui/material";
+import { Box, Pagination, Container, Stack, Typography } from "@mui/material";
 import { Anime, Error, Genres, Loading } from "../components";
 import React from "react";
 import { fetchAnime } from "../utils/FetchAnime";
@@ -36,16 +36,12 @@ const AnimeHome = () => {
         {isSuccess && (
           <>
             <Anime dataAnime={datas} />
-            <Pagination
-              shape={"rounded"}
-              showFirstButton={"true"}
-              showLastButton={"true"}
-              count={totalPage}
-              defaultPage={page}
-              sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
-              onChange={(e, value) => setPage(value)}
-              color="primary"
-            />
+            <Container>
+              <Pagination shape={"rounded"} count={totalPage} defaultPage={page} sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }} onChange={(e, value) => setPage(value)} color="primary" />
+              <span className="dark:text-white my-5">
+                {page} of {totalPage} pages
+              </span>
+            </Container>
           </>
         )}
         {isError && <Error errorMessage={error?.message} />}
