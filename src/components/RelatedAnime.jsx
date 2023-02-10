@@ -14,6 +14,7 @@ const RelatedAnime = ({ related }) => {
 
   const { data, isSuccess, error, isFetching, isError, isLoading } = useQuery(["relatedAnime", related, page], relatedAnime, {
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
   });
   const datas = data?.data?.map((item) => item);
   const totalPage = data?.meta?.totalPage;

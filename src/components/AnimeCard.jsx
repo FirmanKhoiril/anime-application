@@ -14,9 +14,9 @@ const AnimeCard = ({ anime }) => {
             {anime.title}
           </Typography>
         </Link>
-        <Link to={`/anime/${anime._id}`} className="flex space-x-1">
+        <Link to={`/anime/${anime._id}`} className="flex flex-wrap space-x-1">
           {anime.genres?.map((item, idx) => (
-            <Typography fontWeight={500} variant="subtitle2" className="flex  text-black/90 dark:text-white/80" key={idx}>
+            <Typography fontWeight={500} variant="subtitle2" className=" text-black/90 dark:text-white/80" key={idx}>
               {item + ","}
             </Typography>
           ))}

@@ -1,4 +1,5 @@
 import { useContext, createContext, useState } from "react";
+import { DummyData } from "../utils/DummyData";
 
 const StateContext = createContext();
 

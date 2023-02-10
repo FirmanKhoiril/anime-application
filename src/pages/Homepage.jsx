@@ -8,7 +8,7 @@ const instagram = "https://www.instagram.com/firman.khoiril/";
 const Homepage = () => {
   const navigate = useNavigate();
   const { setLogin } = useStateContext();
-  const standar = "text-lg sm:text-2xl md:text-4xl ";
+  const standar = "text-2xl sm:text-3xl md:text-[50px] ";
 
   const toHomepage = () => {
     setLogin((prev) => !prev);
@@ -20,10 +20,10 @@ const Homepage = () => {
       <div className="flex items-center justify-evenly md:justify-around md:flex-row flex-col h-screen text-white">
         <img src={Background} alt="background" className="h-screen relative w-full " />
         <div className="absolute top-[70px] mt-6 md:mt-3 sm:top-16 lg:top-[400px] md:left-40">
-          <h1 className={`${standar} mx-1 font-semibold`}>
-            Welcome To <span className="bg-gradient-to-r text-transparent  from-sky-500 bg-clip-text via-purple-500 text-2xl  md:text-4xl to-blue-500">Anime Lovers</span>{" "}
+          <h1 className={`${standar} mx-1 font-extrabold sm:font-semibold`}>
+            Welcome To <span className={`bg-gradient-to-r text-transparent  from-sky-500 bg-clip-text via-purple-500  to-blue-500 ${standar}`}>Anime Lovers</span>{" "}
           </h1>
-          <div className="text-sm text-gray-300 tracking-wide md:text-left text-center">
+          <div className="text-sm mt-0 md:mt-10 text-gray-300 tracking-wide md:text-left text-center">
             <span>Created By </span>
             <a
               href={instagram}

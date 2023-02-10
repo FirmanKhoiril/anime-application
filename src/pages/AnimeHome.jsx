@@ -17,6 +17,7 @@ const AnimeHome = () => {
   const { data, isSuccess, error, isFetching, isError, isLoading } = useQuery(["anime", genres, page], dataAnime, {
     refetchOnWindowFocus: false,
     refetchInterval: 10000,
+    keepPreviousData: true,
     staleTime: 10 * (60 * 1000),
   });
   const datas = data?.data?.map((item) => item);

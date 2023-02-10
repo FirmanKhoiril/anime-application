@@ -18,8 +18,7 @@ const SearchAnime = () => {
 
   const { data, isSuccess, isFetching, error, isError, isLoading } = useQuery(["searchAnime", searchAnime, page], dataSearchAnime, {
     refetchOnWindowFocus: false,
-    refetchInterval: 10000,
-    staleTime: 10 * (60 * 1000),
+    keepPreviousData: true,
   });
   const datas = data?.data?.map((item) => item);
   const totalPage = data?.meta?.totalPage;
@@ -39,7 +38,16 @@ const SearchAnime = () => {
 
           <Anime dataAnime={datas} />
           <Container sx={{ display: "flex", alignItems: "center", flexDirection: { xs: "row" }, flexWrap: "wrap" }}>
-            <Pagination shape={"rounded"} count={totalPage} defaultPage={page} sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }} onChange={(e, value) => setPage(value)} color="primary" />
+            <Pagination
+              shape={"rounded"}
+              showFirstButton="true"
+              showLastButton="true"
+              count={totalPage}
+              defaultPage={page}
+              sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
+              onChange={(e, value) => setPage(value)}
+              color="primary"
+            />
             <span className="dark:text-white my-5">
               {page} of {totalPage} pages
             </span>

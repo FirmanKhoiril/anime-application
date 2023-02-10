@@ -26,7 +26,7 @@ const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, syn
                   <Typography variant="body2" className="md:text-center text-gray-700 flex flex-col dark:text-slate-300" fontWeight={500}>
                     Genres :{" "}
                     <div className="flex flex-wrap space-x-2 my-2">
-                      {genres.map((item, idx) => (
+                      {genres?.map((item, idx) => (
                         <div className="flex cursor-pointer border hover:bg-sky-500 hover:text-white my-1 rounded-md border-sky-500 px-2 py-1" key={idx} onClick={() => handleGenres({ item })}>
                           {item}
                         </div>
@@ -35,7 +35,7 @@ const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, syn
                   </Typography>
                   <Typography variant="body2" className="dark:text-slate-200 mt-4 md:text-center text-gray-700 flex flex-col items-baseline">
                     Alternative Title :{" "}
-                    {alternativeTitles.map((item, idx) => (
+                    {alternativeTitles?.map((item, idx) => (
                       <div className="flex flex-col" key={idx}>
                         - {item}
                       </div>

@@ -2,18 +2,17 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import { RiSwordLine, RiGhost2Line, RiEmotionLaughLine } from "react-icons/ri";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
+import { FaRegLaughBeam } from "react-icons/fa";
 import ForestIcon from "@mui/icons-material/Forest";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { MdMovieCreation } from "react-icons/md";
 import { GiGhost, GiMountainClimbing, GiChemicalTank, GiLoveLetter, GiEvilBook } from "react-icons/gi";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ScoreboardIcon from "@mui/icons-material/Scoreboard";
-import { GiWhiteBook } from "react-icons/gi";
-import { BiHomeHeart } from "react-icons/bi";
 
 const Adult = () => <p className="text-lg">18++</p>;
 
-export const links = [{ name: "anime", icon: <BiHomeHeart /> }];
+export const links = [{ name: "anime", icon: <FaRegLaughBeam /> }];
 
 export const DummyData = [
   { name: "Award Winning", icon: <EmojiEventsIcon /> },
