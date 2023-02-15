@@ -38,7 +38,15 @@ const AnimeHome = () => {
           <>
             <Anime dataAnime={datas} />
             <Container>
-              <Pagination shape={"rounded"} count={totalPage} defaultPage={page} sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }} onChange={(e, value) => setPage(value)} color="primary" />
+              <Pagination
+                shape={"rounded"}
+                size="small"
+                count={totalPage}
+                defaultPage={1}
+                sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
+                onChange={(e, value) => setPage(value)}
+                color="primary"
+              />
               <span className="dark:text-white my-5">
                 {page} of {totalPage} pages
               </span>

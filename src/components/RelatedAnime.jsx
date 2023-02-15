@@ -21,8 +21,8 @@ const RelatedAnime = ({ related }) => {
 
   return (
     <>
-      <h2 className="text-center text-2xl dark:text-white font-sans">Related Anime</h2>
-      <Box sx={{ display: "flex", mt: 2, flexDirection: "column", gap: 4 }}>
+      <h2 className="text-center text-2xl dark:text-white font-sans">You might also like Anime</h2>
+      <Container sx={{ display: "flex", mt: 2, flexDirection: "column", gap: 4 }}>
         {isSuccess && (
           <>
             <Anime dataAnime={datas} />
@@ -38,7 +38,7 @@ const RelatedAnime = ({ related }) => {
           {isFetching && isLoading && <Loading />}
           {isError && <Error errorMessage={error?.message} />}
         </div>
-      </Box>
+      </Container>
     </>
   );
 };

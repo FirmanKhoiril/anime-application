@@ -43,7 +43,8 @@ const SearchAnime = () => {
               showFirstButton="true"
               showLastButton="true"
               count={totalPage}
-              defaultPage={page}
+              defaultPage={1}
+              size="small"
               sx={{ my: 4, mx: { md: 4 }, backgroundClip: "text", color: "transparent", bgcolor: "#fff" }}
               onChange={(e, value) => setPage(value)}
               color="primary"

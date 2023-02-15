@@ -2,8 +2,10 @@ import React from "react";
 import { Box, Typography, CardMedia, CardContent } from "@mui/material";
 import { MdLiveTv } from "react-icons/md";
 import { FaMedal } from "react-icons/fa";
+import { AiFillFire } from "react-icons/ai";
+import { BiMoviePlay } from "react-icons/bi";
 import { RelatedAnime } from "../components";
-import { BsCheckAll } from "react-icons/bs";
+import { BsCheckAll, BsDot } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, synopsis, alternativeTitles, type, episodes } }) => {
@@ -34,10 +36,10 @@ const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, syn
                     </div>
                   </Typography>
                   <Typography variant="body2" className="dark:text-slate-200 mt-4 md:text-center text-gray-700 flex flex-col items-baseline">
-                    Alternative Title :{" "}
+                    Alternative Title :
                     {alternativeTitles?.map((item, idx) => (
-                      <div className="flex flex-col" key={idx}>
-                        - {item}
+                      <div className="flex py-2 px-3" key={idx}>
+                        <BsDot className="text-lg text-sky-500" /> {item}
                       </div>
                     ))}
                   </Typography>
@@ -46,21 +48,22 @@ const Detail = ({ anime: { _id, title, image, genres, link, ranking, status, syn
               <Box display="flex" alignItems={"center"} className="space-x-1 justify-around md:justify-evenly  ">
                 <Typography variant="body2" className="text-sky-500 flex flex-row">
                   Ranking : {ranking}
-                  <FaMedal className=" text-sm xs:block hidden text-sky-600 mt-[3px] ml-1" />
+                  {ranking == 0 ? "" : <FaMedal className=" text-sm xs:block hidden text-sky-600 mt-[3px] ml-1" />}
                 </Typography>
                 <Typography variant="body2" className="text-slate-600 dark:text-slate-300  ">
-                  Episodes: {episodes}
+                  Episodes: {episodes || "There isn't any episode"}
                 </Typography>
-                <Typography variant="body2" className="text-slate-600 dark:text-slate-300 flex flex-row">
+                <Typography variant="body2" className="text-slate-600 dark:text-slate-300 flex flex-row items-center">
                   Type: {type}
-                  <MdLiveTv className="text-sky-500  xs:block hidden text-[17px] ml-1" />
+                  {type == "TV" ? <MdLiveTv className="text-sky-500  xs:block hidden text-[17px] ml-1" /> : <BiMoviePlay className="text-sky-500  xs:block hidden text-[17px] ml-1" />}
                 </Typography>
               </Box>
               <Box className="flex flex-row items-center ml-4 mt-4">
                 <Typography variant="body2" marginLeft={1} className=" text-slate-600 dark:text-white/75">
                   Status : <span className="text-sky-500"> {status}</span>
                 </Typography>
-                <BsCheckAll className="text-lime-500 text-xl ml-1" />
+
+                {status == "Finished Airing" ? <BsCheckAll className="text-lime-500 text-xl ml-1" /> : <AiFillFire className="text-xl ml-1 text-orange-600" />}
               </Box>
             </Box>
             <CardContent className="dark:text-white ">
