@@ -25,7 +25,7 @@ const AnimeHome = () => {
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
-      <Box sx={{ height: { sx: "auto", md: "94vh" }, px: { sx: 0, md: 2 } }} className="border-r dark:border-white/10 border-black/10">
+      <Box sx={{ height: { sx: "auto", md: "94vh" }, px: { sx: 0, md: 2 } }}>
         <Genres />
       </Box>
       <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }} zIndex="10">
