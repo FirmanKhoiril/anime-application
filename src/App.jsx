@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Box } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,6 +11,10 @@ import { useStateContext } from "./context/contextApi";
 
 const App = () => {
   const { dark, setDark, toogle, login } = useStateContext();
+
+  useEffect(() => {
+    localStorage.setItem("theme", dark);
+  }, [dark]);
   return (
     <div className={dark ? "dark" : ""}>
       <BrowserRouter>

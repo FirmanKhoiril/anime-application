@@ -6,7 +6,7 @@ const StateContext = createContext();
 export const ContextProvider = ({ children }) => {
   const [searchAnime, setSearchAnime] = useState("");
   const [toogle, setToogle] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(localStorage.theme);
   const [login, setLogin] = useState(false);
   const [genres, setGenres] = useState("Award Winning");
   const [page, setPage] = useState(1);
