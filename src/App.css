@@ -11,6 +11,13 @@ body::-webkit-scrollbar {
   width: 4px;
   height: 2px;
 }
+.borders {
+  border-radius: 51% 49% 46% 54% / 51% 78% 22% 49%;
+  transition: border-radius 300ms;
+}
+.borders:hover {
+  border-radius: 24% 76% 16% 84% / 84% 17% 83% 16%;
+}
 
 body::-webkit-scrollbar-track-piece {
   background-color: #fff;
