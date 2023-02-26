@@ -17,7 +17,7 @@ const Homepage = () => {
 
   return (
     <div className="h-screen relative overflow-hidden ">
-      <div className="flex items-center justify-evenly md:justify-around md:flex-row flex-col h-screen text-white">
+      <div className="flex items-center  justify-evenly md:justify-around md:flex-row flex-col h-screen text-white">
         <img src={Background} alt="background" className="h-full relative w-full " />
         <div className="absolute top-[70px] mt-6 md:mt-3 sm:top-16 lg:top-[400px] md:left-40">
           <h1 className={`${standar} mx-1 font-extrabold sm:font-semibold`}>
