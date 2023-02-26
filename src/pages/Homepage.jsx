@@ -1,8 +1,9 @@
 import React from "react";
 import Anime from "../assets/hehe.jpg";
-import Background from "../assets/mains.png";
+import Background from "../assets/detail.jpg";
 import { useStateContext } from "../context/contextApi";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 const instagram = "https://www.instagram.com/firman.khoiril/";
 
 const Homepage = () => {
@@ -16,30 +17,29 @@ const Homepage = () => {
   };
 
   return (
-    <div className="h-screen relative overflow-hidden ">
-      <div className="flex items-center  justify-evenly md:justify-around md:flex-row flex-col h-screen text-white">
-        <img src={Background} alt="background" className="h-full relative w-full " />
-        <div className="absolute top-[70px] mt-6 md:mt-3 sm:top-16 lg:top-[400px] md:left-40">
-          <h1 className={`${standar} mx-1 font-extrabold sm:font-semibold`}>
-            Welcome To <span className={`bg-gradient-to-r text-transparent  from-sky-500 bg-clip-text via-purple-500  to-blue-500 ${standar}`}>Anime Lovers</span>{" "}
-          </h1>
-          <div className="text-sm mt-0 md:mt-10 text-gray-300 tracking-wide md:text-left text-center">
-            <span>Created By </span>
-            <a
-              href={instagram}
-              target="_blank"
-              className="text-transparent text-[15px] font-bold bg-clip-text bg-gradient-to-r from-fuchsia-500 to-red-500 hover:border-b hover:border-white via-pink-500 hover:to-fuchsia-500 hover:from-red-500 hover:via-pink-500"
-            >
-              Firman Khoiril Rohmatullah
-            </a>
-          </div>
-        </div>
-        <div className="flex flex-col md:mt-0 sm:mt-20 mt-[180px] xs:mt-[200px] md:right-56 absolute ">
-          <img src={Anime} alt="Anime" className="h-[270px] md:mt-20 sm:h-[300px] md:h-96 w-62 borders" />
-          <button className={`text-xl bg-black/60 px-3 py-3 hover:bg-black/80 rounded-md`} onClick={toHomepage}>
-            Explore Now !
+    <div className="h-screen bg-gradient-to-bl  from-desert via-desert/70 to-desert flex md:flex-row flex-col overflow-hidden">
+      <div className="w-full md:w-[65%] h-[40%] md:h-full">
+        <img src={Background} alt="Background cute anime" className="w-full h-full" />
+      </div>
+      <div className=" w-[98%] flex justify-center items-center md:h-full h-[60%] m-1 md:m-2 relative">
+        <div />
+        <Box
+          sx={{ display: "flex", height: { md: 600, xs: 400 }, width: { lg: 700, md: 500, xs: 480 }, flexDirection: "column", justifyContent: "center", alignItems: "center", px: { lg: 12, xs: 4 } }}
+          className="bg-white/20 md:skew-x-[5deg] md:translate-x-4 md:hover:skew-y-0  hover:translate-x-0 rounded-3xl  font-mono tracking-wide transition duration-500 md:hover:shadow-2xl hover:-skew-x-1 space-y-2"
+        >
+          <h4 className=" text-xl md:text-3xl pb-10">Welcome To Anime Lovers !</h4>
+          <p>
+            This App Familiar with MyAnimeList Website, This is Biggest Website Project{" "}
+            <a className=" cursor-pointer  text-black/70 hover:text-black underline " href={instagram} target="_blank">
+              i
+            </a>{" "}
+            created from Zero to Hero, With many differents Technology.
+          </p>
+          <p className="pb-2">Make sure to enjoy Exploring the Anime app 😁!</p>
+          <button className="bg-desert py-3 transition duration-300 rounded-md px-4 hover:shadow-xl" onClick={toHomepage}>
+            Let's Explore :)
           </button>
-        </div>
+        </Box>
       </div>
     </div>
   );
