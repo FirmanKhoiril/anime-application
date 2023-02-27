@@ -19,6 +19,7 @@ const AnimeHome = () => {
       if (lastPage.meta?.page < lastPage.meta?.totalPage) return lastPage?.meta?.page + 1;
       return false;
     },
+
     refetchOnWindowFocus: false,
     refetchInterval: 10000,
     staleTime: 10 * (60 * 1000),
@@ -41,7 +42,7 @@ const AnimeHome = () => {
               <Anime key={i} dataAnime={page?.data} />
             ))}
             {hasNextPage && (
-              <Container>
+              <Container sx={{ my: 4 }}>
                 <button className="py-2 hover:shadow-lg hover:shadow-sky-500/60 bg-sky-500 px-3 rounded-md text-white/80 transition duration-300 " onClick={fetchNextPage}>
                   Load More
                 </button>
