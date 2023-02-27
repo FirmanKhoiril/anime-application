@@ -12,7 +12,10 @@ import ScoreboardIcon from "@mui/icons-material/Scoreboard";
 
 const Adult = () => <p className="text-lg">18++</p>;
 
-export const links = [{ name: "anime", icon: <FaRegLaughBeam /> }];
+export const links = [
+  { name: "anime", icon: <FaRegLaughBeam /> },
+  { name: "genres", icon: <FavoriteBorderIcon /> },
+];
 
 export const DummyData = [
   { name: "Award Winning", icon: <EmojiEventsIcon /> },

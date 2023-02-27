@@ -3,7 +3,7 @@ import "./App.css";
 import { Box } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, AnimeDetails, SearchAnime, Sidebar } from "./components/index";
-import { AnimeHome, Homepage } from "./pages";
+import { AnimeHome, Homepage, GenresSelected, AllGenres } from "./pages";
 import { MdDarkMode } from "react-icons/md";
 import { BsFillSunFill } from "react-icons/bs";
 import { Tooltip } from "@mui/material";
@@ -39,6 +39,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/anime" element={<AnimeHome />} />
+            <Route path="/genres" element={<GenresSelected />} />
+            <Route path="/genres/:genreOne/:genreTwo" element={<AllGenres />} />
             <Route path="/anime/:id" element={<AnimeDetails />} />
             <Route path="/search/:searchAnime" element={<SearchAnime />} />
           </Routes>
