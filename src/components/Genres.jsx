@@ -11,7 +11,7 @@ const Genres = () => {
         <button
           onClick={() => setGenres(anime.name)}
           key={anime.name}
-          className={` md:m-[10px] my-4 mx-1 font-[500] flex justify-start items-center cursor-pointer bg-transparent outline-none border-none py-0 md:py-[-4px] lg:py-2 px-4 transition-all duration-[400ms] ease-in bg-gradient-to-r hover:from-blue-500 hover:to-sky-500 rounded-2xl md:rounded-full hover:text-white dark:text-slate-400/80 dark:hover:text-white ${
+          className={` md:m-[9px] my-4 mx-1 font-[500] flex justify-start items-center cursor-pointer bg-transparent outline-none border-none py-0 md:py-[-4px] lg:py-2 px-4 transition-all duration-[400ms] ease-in bg-gradient-to-r hover:from-blue-500 hover:to-sky-500 rounded-2xl md:rounded-full hover:text-white dark:text-slate-400/80 dark:hover:text-white ${
             anime.name === genres && "bg-sky-500 text-white dark:text-black"
           } `}
         >

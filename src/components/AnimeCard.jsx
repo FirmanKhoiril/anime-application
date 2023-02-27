@@ -4,7 +4,7 @@ import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 
 const AnimeCard = ({ anime }) => {
   return (
-    <Card sx={{ width: { md: "300px", xs: "300px" } }} className=" md:ml-16 sm:ml-20 xs:ml-10 ml-5 -z-50  shadow-lg shadow-black/70 hover:scale-[1.01] hover:ease-in transition duration-700 bg-white/10 dark:bg-dark">
+    <Card sx={{ width: { md: "300px", xs: "300px" } }} className=" md:ml-16 sm:ml-20 xs:ml-10 ml-5 -z-50  shadow-xl shadow-black/70 dark:shadow-none hover:scale-[1.01] hover:ease-in transition duration-700 bg-white/10 dark:bg-dark">
       <Link to={`/anime/${anime._id}`}>
         <CardMedia component={"img"} title={anime.title} sx={{ width: { xs: "290px", md: "300px", sm: "100%" }, height: 340 }} image={anime.image} draggable />
       </Link>

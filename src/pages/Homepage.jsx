@@ -33,7 +33,7 @@ const Homepage = () => {
             <a className=" cursor-pointer  text-black/70 hover:text-black underline " href={instagram} target="_blank">
               i
             </a>{" "}
-            created With many differents Technology from Zero to Hero . And
+            created With many differents Technology from Zero to Hero.
           </p>
           <p className="pb-2">Make sure to enjoy Exploring the Anime app 😁!</p>
           <button className="bg-desert py-3 transition duration-300 rounded-md px-4 hover:shadow-xl" onClick={toHomepage}>
